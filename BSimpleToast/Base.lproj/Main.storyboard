@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BSimpleToast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUS-ll-yEf">
+                                <rect key="frame" x="175.5" y="569" width="63" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M0L-P8-mHS"/>
+                                    <constraint firstAttribute="width" constant="63" id="iPf-VH-DDY"/>
+                                </constraints>
+                                <state key="normal" title="press Me"/>
+                                <connections>
+                                    <action selector="pressMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooI-88-oBU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mor-Gn-Vez">
+                                <rect key="frame" x="0.0" y="353" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hgs-x7-ot0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="359-sp-xaL">
+                                <rect key="frame" x="147" y="307" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="O4M-mW-wk5"/>
+                                    <constraint firstAttribute="height" constant="30" id="zwB-wT-p0C"/>
+                                </constraints>
+                                <state key="normal" title="press Me(Inside)"/>
+                                <connections>
+                                    <action selector="pressMeInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tP9-qO-BLU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dUS-ll-yEf" firstAttribute="centerX" secondItem="mor-Gn-Vez" secondAttribute="centerX" id="2gd-qW-ths"/>
+                            <constraint firstItem="mor-Gn-Vez" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JFi-xG-yRf"/>
+                            <constraint firstItem="mor-Gn-Vez" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LyK-4j-YxB"/>
+                            <constraint firstItem="mor-Gn-Vez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R1M-9r-mWg"/>
+                            <constraint firstItem="359-sp-xaL" firstAttribute="centerX" secondItem="mor-Gn-Vez" secondAttribute="centerX" id="am8-q8-8jq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mor-Gn-Vez" secondAttribute="trailing" id="peO-zK-4lu"/>
+                            <constraint firstItem="dUS-ll-yEf" firstAttribute="top" secondItem="mor-Gn-Vez" secondAttribute="bottom" constant="16" id="rwb-LM-tAz"/>
+                            <constraint firstItem="mor-Gn-Vez" firstAttribute="top" secondItem="359-sp-xaL" secondAttribute="bottom" constant="16" id="vrj-RD-2ma"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="insideView" destination="mor-Gn-Vez" id="RMX-5P-C7k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
